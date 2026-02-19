@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "966451611977",
+    "project_id": "fspulast",
+    "storage_bucket": "fspulast.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966451611977:android:4505f12100b04922d0b298",
+        "android_client_info": {
+          "package_name": "com.example.fspulast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgWJRwxqNwyogDcl_sD2EWyUIxQJ0b54k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
