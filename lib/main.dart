@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:fspulast/binding/initbinding.dart';
 import 'package:fspulast/core/services/services.dart';
+import 'package:fspulast/routes.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main()async{
    WidgetsFlutterBinding.ensureInitialized();
@@ -13,16 +16,21 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Flutter Demo Home Page'),),
-        body: const Center(child: Text('Hello World'),),
-      ),
+    return GetMaterialApp(
+      
+
+debugShowCheckedModeBanner: false,
+ locale: const Locale("ar"),
+     // locale: controllerlang.mylang,
+   //   theme: controllerlang.appTheme,
+      title: 'fspulast',   
+      initialBinding: Initbindings(),  
+   
+    
+     getPages: routes
+      //من اجل اليزي بوت حتى لا اضطر لاستدعائها في كل صفحة 
+     // initialBinding: MyBinding(),
+    
     );
   }
 }
