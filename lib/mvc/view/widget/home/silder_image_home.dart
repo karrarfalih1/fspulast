@@ -13,7 +13,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
   const SilderImageHome({super.key});
   @override
   Widget build(BuildContext context) {
-    return  GetBuilder<HomeControllerImp>(builder: (controller)=>
+    return 
     Stack(
     children: [
      
@@ -73,7 +73,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
           
       )),
     ],
-    ));
+    );
   }
 }
 
