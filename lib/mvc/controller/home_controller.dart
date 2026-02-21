@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fspulast/core/class/statusRequest.dart';
+import 'package:fspulast/core/constant/routesname.dart';
 import 'package:fspulast/core/flunctions/handlingdatacontroller.dart';
 import 'package:fspulast/core/services/services.dart';
 import 'package:fspulast/mvc/modeldata/data/card/points.dart';
@@ -101,7 +102,7 @@ fir.subscribeToTopic("users");
   }
 
   gotoactivity(){
-   // Get.toNamed(Approuts.);
+Get.toNamed(Approuts.activity);
   }
   
 /////////////////////////////////

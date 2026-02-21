@@ -2,6 +2,8 @@ class Applink{
   static const String server="https://alaraka.com/fspulastphp";
     static const images = "$server/upload";
     static const home="$server/home/home.php";
+    
+  static const activityView = "$server/activity/view.php";
   
   /**
    * 
@@ -43,7 +45,6 @@ class Applink{
 
   static const universityplus = "$server/university/plusun.php";
 ////////////////activity/////////////
-  static const activity_view = "$server/activity/view.php";
 
   static const activity_delet = "$server/activity/delet.php";
 

@@ -41,7 +41,7 @@ class Homepage extends StatelessWidget {
                      
                   const CartHome(),
                   SizedBox(height:  100,
-                  child: controller.dataActivity.isEmpty?const Text("لا توجد بيانات"): CardHome(title: controller.dataActivity[0]["activity_title"], subtitle: controller.dataActivity[0]["activity_disc"], icons: Icons.date_range, trailtext: controller.dataActivity[0]["activity_date_create"]),)
+                  child: controller.dataActivity.isEmpty?const Text("لا توجد بيانات"): CardHome(ontap: controller.gotoactivity,title: controller.dataActivity[0]["activity_title"], subtitle: controller.dataActivity[0]["activity_disc"], icons: Icons.date_range, trailtext: controller.dataActivity[0]["activity_date_create"]),)
               /*  SizedBox(height: 100,
                 child:     GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 
