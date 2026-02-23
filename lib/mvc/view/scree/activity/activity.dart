@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fspulast/core/class/handlingdataview.dart';
 import 'package:fspulast/core/constant/color.dart';
 import 'package:fspulast/mvc/controller/activity/activity_controller.dart';
 import 'package:fspulast/mvc/modeldata/model/activitymodel.dart';
@@ -10,7 +11,7 @@ class Activity extends StatelessWidget{
 
   @override
     Widget build(BuildContext context) {
-    ActivityControllerImp controller=Get.put(ActivityControllerImp());
+Get.put(ActivityControllerImp());
     return SafeArea(child: Scaffold(
     appBar : AppBar(
         //لجعلالعنوان في المنتصف
@@ -18,7 +19,10 @@ class Activity extends StatelessWidget{
        backgroundColor: AppColor.fspucolor,
         title: Text("جدول النشاطات",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color:Colors.white),),),
 
-body: Container(
+body:
+GetBuilder<ActivityControllerImp>(builder: (controller)=>
+HandlingDataView(statusRequest: controller.statusRequest, widget: 
+ Container(
   padding: const EdgeInsets.all(15),
   child:ListView.separated(
    
@@ -32,12 +36,13 @@ body: Container(
       );
      },
       itemCount: controller.data.length,
-       itemBuilder:(context,int index){
-        if(controller.isSelect[controller.data[index]["activity_id"]]==null){
+      itemBuilder:(context,int index){
+      if(controller.isSelect[controller.data[index]["activity_id"]]==null){
         controller.isSelect[controller.data[index]["activity_id"]]=controller.data[index]['participate'];
         }
         return BostActivity(activityModel: ActivityModel.fromJson(controller.data[index]));
-       },)),
+       }
+,)))),
 )) ;
   }
 

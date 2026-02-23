@@ -38,10 +38,16 @@ class Homepage extends StatelessWidget {
                       children: [
                        
                         const SilderImageHome(),
-                     
+                  
                   const CartHome(),
+                     Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20),
+                    child: const Text("الاحداث والفعاليات",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: AppColor.fspucolor),)),
                   SizedBox(height:  100,
-                  child: controller.dataActivity.isEmpty?const Text("لا توجد بيانات"): CardHome(ontap: controller.gotoactivity,title: controller.dataActivity[0]["activity_title"], subtitle: controller.dataActivity[0]["activity_disc"], icons: Icons.date_range, trailtext: controller.dataActivity[0]["activity_date_create"]),)
+                  child: controller.dataActivity.isEmpty?const Text("لا توجد بيانات"): 
+                  CardHome(ontap: controller.gotoactivity,title: controller.dataActivity[0]["activity_title"],
+                   subtitle: controller.dataActivity[0]["activity_disc"], 
+                   icons: Icons.date_range, trailtext: controller.dataActivity[0]["activity_date_create"]),)
               /*  SizedBox(height: 100,
                 child:     GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 

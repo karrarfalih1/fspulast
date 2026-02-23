@@ -28,16 +28,12 @@ class Applink{
   static const verfiycodeforget = "$server/forgetpassword/verfiycodeforget.php";
 //====================home=====================//
  
-/////////////////////////images//////////////////////
-  static const String imagestatic = "https://karar.io/ecommerce1/upload";
-  static const String imagescatigores = "$imagestatic/categories";
-  static const String imagesitems = "$imagestatic/items";
 ///////////////////fspu////////////
 
 ///////////home////////////
   static const slider = "$server/slider.php";
   static const getcount = "$server/getAllCount.php";
-////////image//////////////
+
 
 //////university/////////
 

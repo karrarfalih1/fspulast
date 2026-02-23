@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:fspulast/core/class/statusRequest.dart';
 import 'package:fspulast/core/constant/color.dart';
 import 'package:fspulast/core/flunctions/handlingdatacontroller.dart';
-import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:fspulast/mvc/modeldata/data/activity.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 abstract class ActivityController extends GetxController {
   getActivityData();
@@ -36,11 +34,10 @@ class ActivityControllerImp extends ActivityController {
 
   @override
   getActivityData() async {
-    //نعطي قيمة ابتدائية وهي اللودنغ
+   
     statusRequest = StatusRequest.loading;
     update();
-//لجلب المعلومات
-//الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
+
     var response = await activityData.getdata( "1"
          // myservices.sharedPreferences.getString("id")
           
@@ -52,13 +49,7 @@ class ActivityControllerImp extends ActivityController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == 'success') {
         data.addAll(response['data']);
-        lastdate = response['data'][0]['activity_date'];
-        fersttitle = response['data'][0]['activity_title'];
-
-        DateTime lastdate2 = DateTime.parse(lastdate.toString());
-
-        datek = DateFormat('yyyy-MM-dd').format(lastdate2);
-        
+  
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -68,7 +59,9 @@ class ActivityControllerImp extends ActivityController {
 
   deletactivity(activityId) async {
     var response = await activityData.activity_delet(
-        activityId, myservices.sharedPreferences.getString("id"));
+        activityId,"1"// myservices.sharedPreferences.getString("id")
+        
+        );
     statusRequest = handleingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == 'success') {
@@ -79,16 +72,19 @@ class ActivityControllerImp extends ActivityController {
             title: "نجاح",
             messageText: const Text("لقد تم حذف اسمك من النشاط بنجاح"));
      
-      } else {
+          } else {
         statusRequest = StatusRequest.failure;
-      }
-    }
+           }
+        }
     update();
   }
 
   addactivity(activityId) async {
     var response = await activityData.activity_add(
-        activityId, myservices.sharedPreferences.getString("id"));
+        activityId,"1"// myservices.sharedPreferences.getString("id")
+        
+        
+        );
     statusRequest = handleingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == 'success') {

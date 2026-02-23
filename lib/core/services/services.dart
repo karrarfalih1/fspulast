@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyServices extends GetxService {
@@ -16,5 +17,6 @@ await Firebase.initializeApp();
   }
 }
 initialServices() async {
+    await Jiffy.setLocale("ar");
   await Get.putAsync(() => MyServices().init());
 }

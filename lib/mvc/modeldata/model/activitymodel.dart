@@ -10,6 +10,8 @@ class ActivityModel {
   String? activityDateEnd;
   int? activityGroubId;
   int? activityUsersId;
+  String? activityImage;
+  int? participate;
 
   ActivityModel(
       {this.activityId,
@@ -22,7 +24,9 @@ class ActivityModel {
       this.activityDateStart,
       this.activityDateEnd,
       this.activityGroubId,
-      this.activityUsersId});
+      this.activityUsersId,
+      this.activityImage,
+      this.participate});
 
   ActivityModel.fromJson(Map<String, dynamic> json) {
     activityId = json['activity_id'];
@@ -36,6 +40,8 @@ class ActivityModel {
     activityDateEnd = json['activity_date_end'];
     activityGroubId = json['activity_groub_id'];
     activityUsersId = json['activity_users_id'];
+    activityImage = json['activity_image'];
+    participate = json['participate'];
   }
 
   Map<String, dynamic> toJson() {
@@ -51,6 +57,8 @@ class ActivityModel {
     data['activity_date_end'] = this.activityDateEnd;
     data['activity_groub_id'] = this.activityGroubId;
     data['activity_users_id'] = this.activityUsersId;
+    data['activity_image'] = this.activityImage;
+    data['participate'] = this.participate;
     return data;
   }
 }

@@ -20,7 +20,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
       SizedBox( 
       
         
-         height: 260,
+         height: 240,
                           //  margin: const EdgeInsets.symmetric(horizontal: 10),
                             child: HandlingDataView(statusRequest: controller.statusRequest, widget: 
                       PageView.builder(

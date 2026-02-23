@@ -6,6 +6,7 @@ import 'package:fspulast/core/flunctions/fcmconfig.dart';
 import 'package:fspulast/core/services/services.dart';
 import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:get/get.dart';
+import 'package:jiffy/jiffy.dart';
 class LocaleController extends GetxController{
 Locale? mylang;
 
@@ -31,10 +32,16 @@ changeLang(){
 
  
 }
+permtion()async{
+  await requestPermissionNotification();
+    await Jiffy.setLocale("ar");
+    await  fcmconfig();
+}
 @override
+
   void onInit() {
-       requestPermissionNotification();
-    fcmconfig();
+      permtion();
+   
    String? themeshared=myServices.sharedPreferences.getString("them");
    if(themeshared=="dark"){
     changeTheme(true);
