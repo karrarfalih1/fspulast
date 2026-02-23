@@ -13,17 +13,14 @@ class SilderImageHome extends GetView<HomeControllerImp> {
   const SilderImageHome({super.key});
   @override
   Widget build(BuildContext context) {
-    return 
-    Stack(
-    children: [
-     
-      SizedBox( 
-      
-        
+         return 
+         Stack(
+         children: [ 
+         SizedBox( 
          height: 240,
-                          //  margin: const EdgeInsets.symmetric(horizontal: 10),
-                            child: HandlingDataView(statusRequest: controller.statusRequest, widget: 
-                      PageView.builder(
+                   //  margin: const EdgeInsets.symmetric(horizontal: 10),
+                       child: HandlingDataView(statusRequest: controller.statusRequest, widget: 
+                       PageView.builder(
                             //  controller: controller.pageController,
                               itemCount: controller.dataAds.length,
                             

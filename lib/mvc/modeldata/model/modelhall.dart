@@ -1,9 +1,8 @@
-class Modelhall {
+class ModelHall {
   int? hallId;
-  String? hallSize;
+  int? hallSize;
   int? hallPrice;
   int? hallTaple;
-  int? hallChair;
   int? hallMic;
   int? hallWc;
   int? hallDesk;
@@ -12,15 +11,14 @@ class Modelhall {
   int? hallStudio;
   String? hallDescription;
   String? hallLocation;
-  String? hallLangtude;
-  String? hallLatitude;
+  double? hallLangtude;
+  double? hallLatitude;
 
-  Modelhall(
+  ModelHall(
       {this.hallId,
       this.hallSize,
       this.hallPrice,
       this.hallTaple,
-      this.hallChair,
       this.hallMic,
       this.hallWc,
       this.hallDesk,
@@ -32,12 +30,11 @@ class Modelhall {
       this.hallLangtude,
       this.hallLatitude});
 
-  Modelhall.fromJson(Map<String, dynamic> json) {
+  ModelHall.fromJson(Map<String, dynamic> json) {
     hallId = json['hall_id'];
     hallSize = json['hall_size'];
     hallPrice = json['hall_price'];
     hallTaple = json['hall_taple'];
-    hallChair = json['hall_chair'];
     hallMic = json['hall_mic'];
     hallWc = json['hall_wc'];
     hallDesk = json['hall_desk'];
@@ -56,7 +53,6 @@ class Modelhall {
     data['hall_size'] = this.hallSize;
     data['hall_price'] = this.hallPrice;
     data['hall_taple'] = this.hallTaple;
-    data['hall_chair'] = this.hallChair;
     data['hall_mic'] = this.hallMic;
     data['hall_wc'] = this.hallWc;
     data['hall_desk'] = this.hallDesk;

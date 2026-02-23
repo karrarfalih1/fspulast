@@ -27,18 +27,17 @@ class MapControllerImp extends MapController {
 
 
 
-  showmap(lat,lang,titlelocation) {
-    // ignore: prefer_const_constructors
-    marker.add(Marker(markerId: MarkerId('1'), position: LatLng(lang!, lat!)));
-
-    Get.dialog(Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      child: SizedBox(
+        showmap(lat,lang,titlelocation) {
+        // ignore: prefer_const_constructors
+        marker.add(Marker(markerId: MarkerId('1'), position: LatLng(lat!, lang!)));
+        Get.dialog(Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: SizedBox(
         width: 600,
         height: 450,
         child: Column(
-          children: [
-            Expanded(
+        children: [
+        Expanded(
                 child: Container(
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -67,7 +66,7 @@ class MapControllerImp extends MapController {
                   onMapCreated: (GoogleMapController mapcontroller) async {
                     controllerr =  mapcontroller;
                     controllerr!.animateCamera(
-                        CameraUpdate.newLatLng(LatLng(lang!, lat!)));
+                        CameraUpdate.newLatLng(LatLng(lat!, lang!)));
                     //       _controller.complete(controller);
                   },
                 ),

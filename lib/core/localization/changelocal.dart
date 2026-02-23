@@ -21,7 +21,8 @@ myservices.sharedPreferences.setString("them","dark");
   }else{
     appTheme=lightthem;
 myservices.sharedPreferences.setString("them","light");}
-Get.changeTheme(appTheme);
+//Get.changeTheme(appTheme);
+Get.changeTheme(darkthem);
 update();
 }
 changeLang(){

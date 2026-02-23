@@ -4,11 +4,11 @@ import 'package:jiffy/jiffy.dart';
 
 class CardHome extends StatelessWidget {
   final String title;
-    final String subtitle;
+  
     final  IconData icons;
     final String trailtext;
   final void Function()? ontap;
-  const CardHome({super.key, required this.title, this.ontap, required this.subtitle, required this.icons, required this.trailtext});
+  const CardHome({super.key, required this.title, this.ontap,  required this.icons, required this.trailtext});
   @override
   Widget build(BuildContext context) {
     return    InkWell(
@@ -16,9 +16,16 @@ class CardHome extends StatelessWidget {
       child: Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             width: double.infinity,
-                            height: 100,
+                          //  height: 100,
                             child:  Card(
-                              child: ListTile(
+
+                              child: Column(
+                            //    mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const SizedBox(height: 5,),
+                                 Text("    الاحداث والفعاليات",style: TextStyle(fontWeight: FontWeight.bold,),)
+                           ,     ListTile(
       
                                 trailing:
                                  Text(Jiffy.parse(trailtext).fromNow(),
@@ -49,6 +56,7 @@ class CardHome extends StatelessWidget {
                               //  focusColor: Colors.red,
                             ,    leading:Icon(icons),
                               ),
+                              ],)
                             ),
                           ),
     );

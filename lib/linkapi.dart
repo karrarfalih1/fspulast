@@ -57,9 +57,7 @@ class Applink{
   static const getwining = "$server/gewining.php";
 //hall
 
-  static const hallview = "$server/hall/viewhall.php";
-  static const hallimage = "$server/hall/image.php";
-  static const hallresrvation = "$server/hall/listdata.php";
+  static const hallview = "$server/hall.php";
   /////////////////support///////////
    static const support = "$server/support.php";
    ////////////poll///////////////////////////

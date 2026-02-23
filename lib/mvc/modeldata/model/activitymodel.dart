@@ -1,10 +1,12 @@
+import 'dart:ffi';
+
 class ActivityModel {
   int? activityId;
   String? activityTitle;
   String? activityDisc;
   String? activityLocationName;
-  int? activityLangtude;
-  int? activityLatitude;
+  String? activityLangtude;
+  String? activityLatitude;
   String? activityDateCreate;
   String? activityDateStart;
   String? activityDateEnd;
