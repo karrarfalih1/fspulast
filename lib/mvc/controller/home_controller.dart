@@ -28,6 +28,7 @@ RxInt mypoints =0.obs;
 
 List dataActivity=[];
 List dataAds=[];
+List dataweb=[];
 
 List data=[];
 
@@ -66,6 +67,7 @@ update();
   void onInit() {
 FirebaseMessaging fir=FirebaseMessaging.instance;
 fir.subscribeToTopic("users");
+//startAutoSlide();
 
     if(myservices.sharedPreferences.getString("them")=="dark"){
       positive=true;
@@ -92,6 +94,7 @@ fir.subscribeToTopic("users");
       if(response['status']=='success'){
         dataAds.addAll(response['ads']);
         dataActivity.addAll(response['activity']);
+        dataweb.addAll(response['website']);
         print(dataActivity);
         
        

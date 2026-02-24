@@ -24,8 +24,17 @@ class CardHome extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const SizedBox(height: 5,),
-                                 Text("    الاحداث والفعاليات",style: TextStyle(fontWeight: FontWeight.bold,),)
-                           ,     ListTile(
+                                  Row(
+                                        children: [
+                                          SizedBox(width: 10,),
+  Text(" الاحداث والفعاليات",style: TextStyle(fontWeight: FontWeight.bold,),),
+  Spacer(),
+  Text("عرض الكل",style: TextStyle(fontSize: 12),),
+  SizedBox(width: 10,)
+
+                       
+                                  ],),
+                                      ListTile(
       
                                 trailing:
                                  Text(Jiffy.parse(trailtext).fromNow(),
