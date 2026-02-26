@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fspulast/core/constant/color.dart';
+import 'package:fspulast/core/constant/imagesasset.dart';
 import 'package:jiffy/jiffy.dart';
 
 class CardHome extends StatelessWidget {
@@ -52,18 +54,28 @@ class CardHome extends StatelessWidget {
                                                child: Jiffy.parse(trailtext).isBefore(Jiffy.now())?Container(
                                                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                                                
-                                                 child: const Text("نشط الان",style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: AppColor.fspucolor),)):
+                                                 child: Row(
+                                                   children: [
+                                                     Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 5,vertical: 2),
+                                                      
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
+                                                        border:BoxBorder.all(color: AppColor.fspucolor,width: 0.7)
+                                                      ),
+                                                      child: const Text("نشط الان",style: TextStyle(fontSize: 13,color: AppColor.fspucolor),)),
+                                                   ],
+                                                 )):
                                                Text("الحدث القادم",style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: AppColor.fspucolor)),
                                                 )
-                                
-                                /* Text(
-                                 "الحدث القادم",
-                                  style:const TextStyle(color: AppColor.fspucolor,
-                                      fontSize: 20,),
-                                  textDirection: TextDirection.rtl,
-                                ),*/
-                              //  focusColor: Colors.red,
-                            ,    leading:Icon(icons),
+                              
+                            ,    leading:SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: SvgPicture.asset(
+     colorFilter: ColorFilter.mode( AppColor.fspucolor, BlendMode.srcIn),
+                      width: 35,
+                      AppImagesasset.date)),
                               ),
                               ],)
                             ),

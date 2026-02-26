@@ -8,6 +8,8 @@ static const String Logo="assets/images/logoauth2.png";
  static const String card="assets/lottie/card.json";
   static const String star="assets/images/star.svg";
   static const String croun="assets/images/croun.png";
+  static const String build="assets/images/buildpng.png";
+  static const String date ="assets/images/date.svg";
  ///////////////fspu//////////////////
  
  static const String fspulogo="assets/images/fspulogo.png";
@@ -22,7 +24,6 @@ static const String Logo="assets/images/logoauth2.png";
  static const String osara1="assets/images/osara1.png";
  static const String mostanserea="assets/images/mostanserea.png";
  
- static const String tekno="assets/images/tekno.png";
   static const String supportRafedan="assets/images/rafden.png";
   
   static const String supportZaincash="assets/images/zaincash.png";

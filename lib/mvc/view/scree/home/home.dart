@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fspulast/core/class/handlingdataview.dart';
 import 'package:fspulast/core/constant/color.dart';
+import 'package:fspulast/core/constant/imagesasset.dart';
 import 'package:fspulast/core/constant/routesname.dart';
 import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:fspulast/mvc/view/widget/home/card_home.dart';
@@ -51,13 +52,16 @@ class Homepage extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(Approuts.roomView);
                     },
-                    child: Card(
-                      child: ListTile(
-                        leading: const Icon(Icons.domain),
-                        title: const Text("حجز القاعات"),
-                        subtitle: const Text(
-                          "تتوفر قاعات  كبيرة للحجز",
-                          style: TextStyle(fontSize: 13),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: Card(
+                        child: ListTile(
+                          leading: Image.asset(AppImagesasset.build),
+                          title: const Text("حجز القاعات"),
+                          subtitle: const Text(
+                            "تتوفر قاعات  كبيرة للحجز",
+                            style: TextStyle(fontSize: 13),
+                          ),
                         ),
                       ),
                     ),

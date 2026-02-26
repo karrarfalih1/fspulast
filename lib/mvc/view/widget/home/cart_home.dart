@@ -17,12 +17,13 @@ class CartHome extends GetView<CartContrllerImp>{
                               itemCount: controller.datacart.length,
                               itemBuilder: (context, index) {
                                 return Container(
+                                  
                                       decoration: BoxDecoration(
                                        //   color: AppColor.fspucolor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 0, vertical: 10),
+                                          horizontal: 4, vertical: 10),
                                       height: 120,
                                       width: 80,
                                       child: InkWell(
@@ -36,23 +37,28 @@ class CartHome extends GetView<CartContrllerImp>{
                                     
                                           
                                         },
-                                        child: Card(
+                                       
                                           child: Center(
                                             child: Column(
                                               mainAxisAlignment: MainAxisAlignment.center,
                                               crossAxisAlignment: CrossAxisAlignment.center,
                                               children: [
                                                     Container(
+                                                      padding: EdgeInsets.all(5),
+                                                      decoration: BoxDecoration(
+                                                        border: Border.all(color: AppColor.fspucolor),
+                                                        borderRadius: BorderRadius.circular(20)
+                                                      ),
                                                     child: Lottie.asset(
                                         
                                                     width: 60,
                                                     controller.datacart[index]['icon']),
                                                 )
                                              //  Icon(controller.datacart[index]['icon'],color:Colors.white,),
-                                             ,  Text("${controller.datacart[index]['title']}",style: const TextStyle(color: AppColor.fspucolor,fontWeight: FontWeight.bold,fontSize: 13),)
+                                             ,  Text("${controller.datacart[index]['title']}",style: const TextStyle(color: AppColor.fspucolor,fontSize: 13),)
                                                                                ],),
                                           ),
-                                        ),
+                                        
                                       ))
                                 ;
                               }),
