@@ -22,7 +22,7 @@ myservices.sharedPreferences.setString("them","dark");
     appTheme=lightthem;
 myservices.sharedPreferences.setString("them","light");}
 //Get.changeTheme(appTheme);
-Get.changeTheme(darkthem);
+Get.changeTheme(appTheme);
 update();
 }
 changeLang(){

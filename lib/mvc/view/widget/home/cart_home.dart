@@ -44,6 +44,7 @@ class CartHome extends GetView<CartContrllerImp>{
                                               crossAxisAlignment: CrossAxisAlignment.center,
                                               children: [
                                                     Container(
+                                                      height: 70,
                                                       padding: EdgeInsets.all(5),
                                                       decoration: BoxDecoration(
                                                         border: Border.all(color: AppColor.fspucolor),

@@ -66,14 +66,14 @@ class SilderImageHome extends GetView<HomeControllerImp> {
               ),
               
                 child: ClipOval(
-                  child: CachedNetworkImage(
+                  child: Hero(tag: "550",child:  CachedNetworkImage(
                     imageUrl: "${Applink.images}/karrar.jpg",
                     fit: BoxFit.cover,
                     placeholder: (context, url) =>
               const Center(child: CircularProgressIndicator(strokeWidth: 2)),
                     errorWidget: (context, url, error) =>
               Image.asset(AppImagesasset.manuser, fit: BoxFit.cover),
-                  ),
+                  )),
                 ),
               
             ),

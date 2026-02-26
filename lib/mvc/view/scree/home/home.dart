@@ -6,6 +6,7 @@ import 'package:fspulast/core/constant/routesname.dart';
 import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:fspulast/mvc/view/widget/home/card_home.dart';
 import 'package:fspulast/mvc/view/widget/home/cart_home.dart';
+import 'package:fspulast/mvc/view/widget/home/drower_costam.dart';
 import 'package:fspulast/mvc/view/widget/home/silder_image_home.dart';
 import 'package:fspulast/mvc/view/widget/home/webviewlist.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,7 @@ class Homepage extends StatelessWidget {
         key: controllerhome.scaffoldkey,
 
         drawer: const Drawer(
-          child: Text("data"), //DrowerCostam()
+          child: DrowerCostam()
         ),
         body: GetBuilder<HomeControllerImp>(
           builder: (controller) => HandlingDataView(

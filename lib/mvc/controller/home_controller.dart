@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fspulast/core/class/statusRequest.dart';
 import 'package:fspulast/core/constant/routesname.dart';
 import 'package:fspulast/core/flunctions/handlingdatacontroller.dart';
+import 'package:fspulast/core/localization/changelocal.dart';
 import 'package:fspulast/core/services/services.dart';
 import 'package:fspulast/mvc/modeldata/data/card/points.dart';
 import 'package:fspulast/mvc/modeldata/data/card/slider.dart';
@@ -18,6 +19,8 @@ abstract class HomeController extends  GetxController{
 
 class HomeControllerImp extends HomeController{
   GlobalKey<ScaffoldState>scaffoldkey=GlobalKey();
+  
+  LocaleController controllerthem=Get.put(LocaleController());
   Points points =Points(Get.find());
   Homedata homedata=Homedata(Get.find());
 //  LocaleController controllerthem=Get.put(LocaleController());
@@ -55,7 +58,7 @@ ThemeData(
 positivef(b){
 positive=b;
 
-//controllerthem.changeTheme(positive!);
+controllerthem.changeTheme(positive!);
 update();
 
 }
