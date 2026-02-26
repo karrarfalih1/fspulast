@@ -29,10 +29,12 @@ RxInt mypoints =0.obs;
 List dataActivity=[];
 List dataAds=[];
 List dataweb=[];
-
 List data=[];
-
  var total=0;
+late PageController pageControllerForAdv;
+ var currentPageAdv=0.obs;
+  Timer? _timer;
+
 //////// drower//////////
     int value = 0;
   int? nullableValue;
@@ -58,16 +60,36 @@ update();
 
 }
 
- PageController pageController=PageController();
- var currenPage=0.obs;
- @override
 
+ //////////////slider
+
+    void startAutoSlide(List addata){ 
+    _timer?.cancel();
+    Timer.periodic(const Duration(seconds: 5), (timer){
+      if(currentPageAdv.value<addata.length-1){
+        currentPageAdv.value++;
+      }else{ 
+        currentPageAdv.value=0;
+      }
+      if(pageControllerForAdv.hasClients){
+      pageControllerForAdv.animateToPage(
+        currentPageAdv.value,
+
+       duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+      }
+
+
+    });
+  }
+/////////////end slider
 
   @override
   void onInit() {
+      pageControllerForAdv=PageController();
+       currentPageAdv=0.obs;
 FirebaseMessaging fir=FirebaseMessaging.instance;
 fir.subscribeToTopic("users");
-//startAutoSlide();
+
 
     if(myservices.sharedPreferences.getString("them")=="dark"){
       positive=true;
@@ -95,7 +117,7 @@ fir.subscribeToTopic("users");
         dataAds.addAll(response['ads']);
         dataActivity.addAll(response['activity']);
         dataweb.addAll(response['website']);
-        print(dataActivity);
+       startAutoSlide(dataAds);
         
        
   }
@@ -109,26 +131,14 @@ Get.toNamed(Approuts.activity);
   }
   
 /////////////////////////////////
-  void startAutoSlide(){ 
-    
-    Timer.periodic(const Duration(seconds: 10), (timer){
-      if(currenPage.value<2){
-        currenPage.value++;
-      }else{ 
-        currenPage.value=0;
-      }
-      pageController.animateToPage(
-        currenPage.value,
 
-       duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
-
-    });
-  }
   @override
   void onClose() async{
+       _timer?.cancel();
+   pageControllerForAdv.dispose();
     super.onClose();
     
-    pageController.dispose();
+    
 
   }
  

@@ -22,11 +22,11 @@ class SilderImageHome extends GetView<HomeControllerImp> {
                    //  margin: const EdgeInsets.symmetric(horizontal: 10),
                        child: HandlingDataView(statusRequest: controller.statusRequest, widget: 
                        PageView.builder(
-                            //  controller: controller.pageController,
+                             controller: controller.pageControllerForAdv,
                               itemCount: controller.dataAds.length,
                             
                               onPageChanged: (index) {
-                              controller.currenPage.value = index;
+                              controller.currentPageAdv.value = index;
                               },
                               itemBuilder: (BuildContext context, int index) {
                                 return ClipRRect(
