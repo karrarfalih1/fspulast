@@ -9,7 +9,7 @@ class NotifayData {
   NotifayData(this.crud);
 
   getntefy(String usersid)async{
-    var response=await crud.postData(Applink.activityAddNewActivity,{
+    var response=await crud.postData(Applink.notfy,{
       "usersid":usersid
     });
 

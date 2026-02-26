@@ -10,6 +10,7 @@ static const String Logo="assets/images/logoauth2.png";
   static const String croun="assets/images/croun.png";
   static const String build="assets/images/buildpng.png";
   static const String date ="assets/images/date.svg";
+  static const String notfy="assets/images/nofiy.svg";
  ///////////////fspu//////////////////
  
  static const String fspulogo="assets/images/fspulogo.png";
@@ -34,8 +35,6 @@ static const String Logo="assets/images/logoauth2.png";
  static const String ast="assets/lottie/ast1.json";
  
  static const String users="assets/lottie/users1.json";
- 
- static const String notfy="assets/lottie/notfy.json";
  
  static const String hand="assets/lottie/hand1.json";
  

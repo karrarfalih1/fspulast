@@ -7,4 +7,5 @@ class Approuts{
   static const String roomView="/roomView";
   static const String webview="/webview";
   static const String webpage="/webpage";
+  static const String notification="/notification";
 }

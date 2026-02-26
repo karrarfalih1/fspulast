@@ -5,6 +5,7 @@ import 'package:fspulast/mvc/view/scree/activity/activity.dart';
 import 'package:fspulast/mvc/view/scree/hall.dart';
 import 'package:fspulast/mvc/view/scree/home/home.dart';
 import 'package:fspulast/mvc/view/scree/home/logo_meaning.dart';
+import 'package:fspulast/mvc/view/scree/home/notification.dart';
 import 'package:fspulast/mvc/view/scree/web/webpage.dart';
 import 'package:fspulast/mvc/view/scree/web/webviewtest.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -16,4 +17,5 @@ GetPage(name: Approuts.activity, page:()=>const Activity()),
 GetPage(name: Approuts.roomView, page:()=>const RoomView()),
 GetPage(name:Approuts.webview, page:()=> Webviewtest()),
 GetPage(name: Approuts.webpage, page:()=> WebPage()),
+GetPage(name: Approuts.notification, page:()=>Notification())
 ];

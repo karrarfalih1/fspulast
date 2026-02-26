@@ -9,6 +9,7 @@ class Applink{
   
    static const support = "$server/support.php";
         static const suggestanactivity = "$server/suggestanactivity.php";
+        static const notfy= "$server/notification.php";
   
   /**
    * 

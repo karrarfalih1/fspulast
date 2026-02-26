@@ -1,7 +1,6 @@
 
 import 'package:fspulast/core/class/statusRequest.dart';
 import 'package:fspulast/core/flunctions/handlingdatacontroller.dart';
-import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:fspulast/mvc/modeldata/notifay_data.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +18,7 @@ data.clear();
 //لجلب المعلومات
 //الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
     var response=await notifayData.getntefy(
-      myservices.sharedPreferences.getString("id")!
+      "1",//myservices.sharedPreferences.getString("id")!
     ); 
 
     statusRequest=handleingData(response);
@@ -27,7 +26,7 @@ data.clear();
 //القيمة الفوك متوقع ترجعلي ثلالث اشياء  الاولى نجاح  والثانية خطا بالانترنيت والثالثة خطا بالاتصال
 if(StatusRequest.success==statusRequest){
   if(response['status']=='success'){
- // data.addAll(response['data']);
+  data.addAll(response['data']);
   }else{
     statusRequest=StatusRequest.failure;
   }

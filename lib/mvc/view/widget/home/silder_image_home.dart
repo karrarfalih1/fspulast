@@ -1,6 +1,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fspulast/core/class/handlingdataview.dart';
 import 'package:fspulast/core/constant/color.dart';
 import 'package:fspulast/core/constant/imagesasset.dart';
@@ -49,14 +50,58 @@ class SilderImageHome extends GetView<HomeControllerImp> {
        child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          SizedBox(width: 4,),
+          InkWell(
+            onTap: ()=>controller.scaffoldkey.currentState!.openDrawer(),
+            child: Container(
+              width: 45,
+              height: 45,
+              margin: const EdgeInsets.only(top: 1),
+              padding:EdgeInsets.all(1),
+            
+              decoration: BoxDecoration(
+                color: AppColor.fspucolor,
+                shape: BoxShape.circle,
+             
+              ),
+              
+                child: ClipOval(
+                  child: CachedNetworkImage(
+                    imageUrl: "${Applink.images}/karrar.jpg",
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) =>
+              const Center(child: CircularProgressIndicator(strokeWidth: 2)),
+                    errorWidget: (context, url, error) =>
+              Image.asset(AppImagesasset.manuser, fit: BoxFit.cover),
+                  ),
+                ),
+              
+            ),
+          ),
            
-          IconButton(onPressed:(){controller.scaffoldkey.currentState!.openDrawer();}, icon: const Icon(
+           SizedBox(width: 5,),
 
-            Icons.menu,size: 35,color:AppColor.fspucolor,)),
-         
+
+
+
+            InkWell(
+              onTap: ()=>Get.toNamed(Approuts.notification),
+              
+              child:SizedBox(
+                              width: 40,
+                              height: 40,
+                              child: SvgPicture.asset(
+     colorFilter: ColorFilter.mode( AppColor.fspucolor, BlendMode.srcIn),
+                      width: 35,
+                      AppImagesasset.notfy)))
+         /*
              IconButton(onPressed:(){}, icon: const Icon(
 
-            Icons.notifications_outlined,size: 35,color:AppColor.fspucolor,)),
+            Icons.notifications_outlined,size: 35,color:AppColor.fspucolor,))
+            */
+            
+            
+            ,
             const Spacer(),
           SizedBox(
         height: 42,
