@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fspulast/core/constant/imagesasset.dart';
 import 'package:fspulast/mvc/view/scree/card/about_as.dart';
 import 'package:fspulast/mvc/view/scree/card/boint.dart';
-import 'package:fspulast/mvc/view/scree/card/poll.dart';
 import 'package:fspulast/mvc/view/scree/card/suggestactivityview.dart';
 import 'package:fspulast/mvc/view/scree/card/support.dart';
 import 'package:get/get.dart';
@@ -15,7 +14,7 @@ class CartContrllerImp extends CartContrller{
 List<Widget> page=[
    const AboutAs(),
    const BointView(),
-   const Pollview(),
+ 
    
    const Suggestactivityview(),
    const Supportview(),
@@ -29,8 +28,7 @@ List datacart=[
   {"icon":AppImagesasset.point,
   "title":"نقاطي"},
   
-  {"icon":AppImagesasset.ast,
-  "title":"استبيانات"},
+
      {"icon":AppImagesasset.ak,
   "title":"اقترح نشاط"},
   {"icon":AppImagesasset.hand,

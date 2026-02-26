@@ -1,10 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fspulast/core/constant/color.dart';
+import 'package:fspulast/core/constant/imagesasset.dart';
 import 'package:fspulast/linkapi.dart';
 import 'package:fspulast/mvc/controller/activity/activity_controller.dart';
 import 'package:fspulast/mvc/controller/map_controller.dart';
 import 'package:fspulast/mvc/modeldata/model/activitymodel.dart';
+import 'package:fspulast/mvc/view/widget/activity/stars.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
 
@@ -32,19 +35,31 @@ class BostActivity extends GetView<ActivityControllerImp> {
               child:
            
                
-               ClipRRect(
-                  
-                  borderRadius: BorderRadiusGeometry.circular(30),
-                  child: CachedNetworkImage(
+               Stack(
+               
+                 children: [
                    
-                     placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
-                    fit:BoxFit.cover,
-                    width: double.infinity,
-                    imageUrl: "${Applink.images}/${activityModel.activityImage}",
-                  
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                   ClipRRect(
+                      
+                      borderRadius: BorderRadiusGeometry.circular(30),
+                      child: CachedNetworkImage(
+                       
+                         placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                        fit:BoxFit.cover,
+                        width: double.infinity,
+                        imageUrl: "${Applink.images}/${activityModel.activityImage}",
+                      
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                   ),
+                    ),
+                   Positioned(
+                    top: 0,
+                    left: 0,
+                     child:Stars(point: activityModel.activityPoint??0,)),
+                   
+                 ],
+                 
                ),
-                ),
               
             ),
             
@@ -125,7 +140,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                       onTap: (){
                         if(controller.isSelect[activityModel.activityId]==0){
                           controller.setActivity(activityModel.activityId, 1);
-                           controller.addactivity(activityModel.activityId.toString());
+                           controller.addactivity(activityModel.activityId.toString(),activityModel.activityPoint.toString());
                         }else{
                           Get.defaultDialog(
                             title: "تنبيه",

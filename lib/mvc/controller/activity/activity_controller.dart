@@ -79,11 +79,12 @@ class ActivityControllerImp extends ActivityController {
     update();
   }
 
-  addactivity(activityId) async {
-    var response = await activityData.activity_add(
+  addactivity(activityId,point) async {
+    var response = await activityData.activityAdd(
         activityId,"1"// myservices.sharedPreferences.getString("id")
         
         
+        ,point
         );
     statusRequest = handleingData(response);
     if (StatusRequest.success == statusRequest) {

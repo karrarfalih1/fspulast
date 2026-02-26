@@ -46,58 +46,79 @@ class Supportview extends StatelessWidget{
      ),
      
   const Titlerighit(title: 'طرق التبرع المتاحة',),
-  Card(
-    child: ListTile(
-      leading: Positioned(
-        child: Container(
-        padding:const EdgeInsets.all(3),
-      width: 65,
-      height: 100,
-          child: Image.asset(
-            AppImagesasset.supportRafedan ,
-        fit: BoxFit.fill,
+  ListView.builder( shrinkWrap: true,
+  physics: const NeverScrollableScrollPhysics(),
+  itemCount: controller.data.length,
+    itemBuilder:   (context,index){
+      
+      return    SizedBox(
+        height: 80,
+        child: Card(
+        
+            child:
+            Row(
+        children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                height: 100,
+                width: 100,
+             
+          
+                child:CachedNetworkImage(imageUrl: "${Applink.images}/${controller.data[index]['support_image']}",fit: BoxFit.cover,)
+                
+              
+              ), ),
+              
+          Expanded(
+            flex: 5,
+            child: Column(children: [
+                  
+                   
+              
+              Text("  ${controller.data[index]['support_title']}",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+              const SizedBox(height: 10,),
+           //  Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+              
+                SelectableText(
+                controller.data.isNotEmpty?
+                "${controller.data[index]['support_number']}":"",style: TextStyle(fontSize: 16),
+               ),
+              ],)
+            ],),
+          ),
+        ],
+            )
+            
+            
+            /* ListTile(
+        leading: Positioned(
+          child: Container(
+          padding:const EdgeInsets.all(3),
+        width: 65,
+        height: 100,
+            child:CachedNetworkImage(imageUrl: "${Applink.images}/${controller.data[index]['support_image']}",)
+            
+          
           ),
         ),
-      ),
-      title: const Text("مصرف الرافدين "),
-       trailing:  SelectableText(
-        controller.data.isNotEmpty?
-        "${controller.data[0]['support_number']}":"",style: TextStyle(fontSize: 16),
-       ),
-      ),
-  ),
-  Card(
-    child:Column(children: [
-     ListTile(
-      leading: Positioned(
-        child: Container(
-        padding:const EdgeInsets.all(3),
-      width: 65,
-      height: 100,
-          child: Image.asset(
-            AppImagesasset.supportZaincash ,
-        fit: BoxFit.fill,
+        title:  Text("${controller.data[index]['support_title']}"),
+         trailing:  SelectableText(
+          controller.data.isNotEmpty?
+          "${controller.data[index]['support_number']}":"",style: TextStyle(fontSize: 16),
+         ),
+        ),*/
           ),
-        ),
-      ),
-      title: const Text("زين كاش "),
-       trailing:  SelectableText(
-        controller.data.isNotEmpty?
-        "${controller.data[1]['support_number']}":"",style:const TextStyle(fontSize: 16),
-       ),
-      ),
-      Container(
-        
-        margin:const EdgeInsets.all(10),
-        width: double.infinity,
-        
-        child:controller.data.isNotEmpty?
-        CachedNetworkImage(imageUrl: '${Applink.images}/${controller.data[2]['support_number']}',):
-      const  Text(""),
-      )
+      );
+    }
+  
+ ,),
 
-    ],),
-  )
+
+
      ],))
      ,)
      

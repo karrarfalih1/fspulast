@@ -23,10 +23,11 @@ class ActivityData{
 
   return response.fold((l)=>l,(r)=>r);
   }
-   activity_add(participateActivityId,userid)async{
+   activityAdd(participateActivityId,userid,points)async{
     var response=await crud.postData(Applink.activity_add, {
      "participate_activity_id":participateActivityId,
-     "participate_users_id":userid
+     "participate_users_id":userid,
+     "point":points
     });
 
   return response.fold((l)=>l,(r)=>r);

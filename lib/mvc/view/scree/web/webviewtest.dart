@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fspulast/core/constant/imagesasset.dart';
-import 'package:fspulast/mvc/controller/webview_controller.dart';
+import 'package:fspulast/mvc/controller/web/webview_controller.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 

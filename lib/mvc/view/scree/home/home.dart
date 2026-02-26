@@ -80,7 +80,16 @@ class Homepage extends StatelessWidget {
                         ),
 
                         Spacer(),
-                        Text("عرض الكل", style: TextStyle(fontSize: 12)),
+                        InkWell(
+                          onTap: ()=>Get.toNamed(Approuts.webpage),
+                          child: Container(
+                          
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 3,
+                              horizontal: 10,
+                            ),
+                            child: Text("عرض الكل", style: TextStyle(fontSize: 12))),
+                        ),
                       ],
                     ),
                   

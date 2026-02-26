@@ -4,15 +4,14 @@ import 'package:fspulast/core/class/statusRequest.dart';
 import 'package:fspulast/core/constant/color.dart';
 import 'package:fspulast/core/flunctions/handlingdatacontroller.dart';
 import 'package:fspulast/core/services/services.dart';
-import 'package:fspulast/mvc/controller/home_controller.dart';
 import 'package:fspulast/mvc/modeldata/data/card/suggestanactivity_data.dart';
 import 'package:get/get.dart';
 
-abstract class SuggestanactivityController1 extends GetxController {
+abstract class SuggestanactivityController extends GetxController {
    addsuggestactivity();
 }
 
-class SuggestanactivityController1Imp extends SuggestanactivityController1{
+class SuggestanactivityControllerImp extends SuggestanactivityController{
 Suggestanactivitydata1 suggestanactivitydata =Suggestanactivitydata1(Get.find());
 MyServices myServices =Get.find();
 StatusRequest statusRequest=StatusRequest.none;
@@ -29,7 +28,6 @@ late TextEditingController activity_disc;
   void onInit() {
     activity_disc=TextEditingController();
     activity_title=TextEditingController();
-    // TODO: implement onInit
     super.onInit();
   }
   @override
@@ -42,7 +40,7 @@ late TextEditingController activity_disc;
     @override
       addsuggestactivity() async {
       var response = await suggestanactivitydata.getdata(
-      myservices.sharedPreferences.getString("id"),
+    "1", // myservices.sharedPreferences.getString("id"),
       activity_title.text,
       activity_disc.text
       );

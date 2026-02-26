@@ -4,6 +4,11 @@ class Applink{
     static const home="$server/home/home.php";
     
   static const activityView = "$server/activity/view.php";
+  static const web = "$server/web.php";
+  static const point="$server/point.php";
+  
+   static const support = "$server/support.php";
+        static const suggestanactivity = "$server/suggestanactivity.php";
   
   /**
    * 
@@ -47,7 +52,7 @@ class Applink{
   static const activity_add = "$server/activity/add.php";
  
     static const activityAddNewActivity = "$server/activity/addnewactivity.php";
-     static const suggestanactivity = "$server/activity/suggestanactivity.php";
+
   
 ////////////////points/////////////
   static const pluspoints = "$server/plus_points.php";
@@ -59,7 +64,6 @@ class Applink{
 
   static const hallview = "$server/hall.php";
   /////////////////support///////////
-   static const support = "$server/support.php";
    ////////////poll///////////////////////////
     static const pollview = "$server/poll/pollview.php";
     

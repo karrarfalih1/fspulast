@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class ActivityModel {
   int? activityId;
   String? activityTitle;
@@ -13,6 +11,7 @@ class ActivityModel {
   int? activityGroubId;
   int? activityUsersId;
   String? activityImage;
+  int? activityPoint;
   int? participate;
 
   ActivityModel(
@@ -28,6 +27,7 @@ class ActivityModel {
       this.activityGroubId,
       this.activityUsersId,
       this.activityImage,
+      this.activityPoint,
       this.participate});
 
   ActivityModel.fromJson(Map<String, dynamic> json) {
@@ -43,6 +43,7 @@ class ActivityModel {
     activityGroubId = json['activity_groub_id'];
     activityUsersId = json['activity_users_id'];
     activityImage = json['activity_image'];
+    activityPoint = json['activity_point'];
     participate = json['participate'];
   }
 
@@ -60,6 +61,7 @@ class ActivityModel {
     data['activity_groub_id'] = this.activityGroubId;
     data['activity_users_id'] = this.activityUsersId;
     data['activity_image'] = this.activityImage;
+    data['activity_point'] = this.activityPoint;
     data['participate'] = this.participate;
     return data;
   }
